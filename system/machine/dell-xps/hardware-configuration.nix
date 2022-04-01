@@ -6,7 +6,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
+fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/B307-7565";
       fsType = "vfat";
     };
