@@ -1,16 +1,41 @@
 { pkgs, ... }:
 
 {
-  # TODO: these are dummy file systems, get the proper one
+    fileSystems."/" =
+    { device = "/dev/disk/by-uuid/4508c421-4cb6-4b60-bcac-3915c18abdad";
+      fsType = "ext4";
+    };
+
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/7BB3-09C5";
+    { device = "/dev/disk/by-uuid/B307-7565";
       fsType = "vfat";
     };
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/0fddb262-13c1-46b1-9a5d-216766f47498";
-      fsType = "ext4";
-    };
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/23d6c9ef-5721-4e99-81e4-40d68e32e0a8"; }
+    ];
+
+fileSystems."/home/plutusVM/NAS/NASvideo" =
+  { device = "192.168.1.212:/volume2/video";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+
+fileSystems."/home/plutusVM/NAS/Programming" =
+  { device = "192.168.1.212:/volume2/Programming";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+
+fileSystems."/home/plutusVM/NAS/plutus" =
+  { device = "192.168.1.212:/volume2/homes/plutus";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+
+fileSystems."/home/plutusVM/NAS/NASmusic" =
+  { device = "192.168.1.212:/volume2/music";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
 }

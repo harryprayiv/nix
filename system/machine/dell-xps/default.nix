@@ -6,17 +6,15 @@
     ./hardware-configuration.nix
   ];
 
-  # Use the GRUB 2 boot loader.
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      grub = {
-        enable  = true;
-        device = "/dev/nvme0n1"; # or "nodev" for efi only
-        version = 2;
-      };
-    };
-  };
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  nix.maxJobs = lib.mkDefault 4;
+  powerManagement.cpuFreqGovernor = "powersave";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  virtualisation.virtualbox.guest.enable = true;
 
   networking = {
     hostName = "dell-xps-15-9560";
