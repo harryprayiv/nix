@@ -20,11 +20,6 @@
     interfaces.wlp2s0.useDHCP = true;
   };
 
-  fileSystems."/data" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ext4";
-  };
-
   services.xserver = {
     xrandrHeads = [
       { output = "HDMI-1";
