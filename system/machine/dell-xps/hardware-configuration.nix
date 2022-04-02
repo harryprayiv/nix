@@ -15,12 +15,6 @@ fileSystems."/boot" =
     [ { device = "/dev/disk/by-uuid/23d6c9ef-5721-4e99-81e4-40d68e32e0a8"; }
     ];
 
-fileSystems."/home/plutusVM/NAS/NASvideo" =
-  { device = "192.168.1.212:/volume2/video";
-    options = [ "x-systemd.automount" "noauto" ];
-    fsType = "nfs";
-  };
-
 fileSystems."/home/plutusVM/NAS/Programming" =
   { device = "192.168.1.212:/volume2/Programming";
     options = [ "x-systemd.automount" "noauto" ];
@@ -33,9 +27,4 @@ fileSystems."/home/plutusVM/NAS/plutus" =
     fsType = "nfs";
   };
 
-fileSystems."/home/plutusVM/NAS/NASmusic" =
-  { device = "192.168.1.212:/volume2/music";
-    options = [ "x-systemd.automount" "noauto" ];
-    fsType = "nfs";
-  };
 }
