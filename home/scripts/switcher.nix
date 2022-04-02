@@ -18,7 +18,7 @@ in
     elif [[ $monitors == *"eDP"* ]]; then
       echo "Switching to HM config for eDP laptop display"
       cd ${home}
-      nix build --impure .#homeConfigurations.gvolpe-edp.activationPackage
+      nix build --impure .#homeConfigurations.plutusVM-edp.activationPackage
       result/activate
       cd -
     else

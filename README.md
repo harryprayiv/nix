@@ -1,8 +1,8 @@
 nix-config
 ==========
 
-[![CI Home](https://github.com/plutusVM/nix-config/workflows/Home/badge.svg)](https://github.com/plutusVM/nix-config/actions)
-[![CI System](https://github.com/plutusVM/nix-config/workflows/NixOS/badge.svg)](https://github.com/plutusVM/nix-config/actions)
+[![CI Home](https://github.com/harryprayivnix-config/workflows/Home/badge.svg)](https://github.com/harryprayivnix-config/actions)
+[![CI System](https://github.com/harryprayiv/nix-config/workflows/NixOS/badge.svg)](https://github.com/harryprayiv/nix-config/actions)
 
 My current — and always evolving — NixOS configuration files, home-manager, neovim, etc.
 
