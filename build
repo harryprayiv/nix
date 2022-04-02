@@ -19,10 +19,10 @@ pre_home() {
   mkdir -p $HOME/Pictures/
   cp home/nixos.png $HOME/Pictures/
 
-  mkdir -p $HOME/NAS/
-  mkdir -p $HOME/NAS/Programming/
-  mkdir -p $HOME/NAS/Cardano/
-  mkdir -p $HOME/NAS/plutus/
+  #mkdir -p $HOME/NAS/
+  #mkdir -p $HOME/NAS/Programming/
+  #mkdir -p $HOME/NAS/Cardano/
+  #mkdir -p $HOME/NAS/plutus/
 }
 
 post_home() {
