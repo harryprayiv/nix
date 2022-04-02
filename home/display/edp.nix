@@ -19,10 +19,6 @@ let
     font5 = 10;
   };
 
-  megasync = import ../programs/megasync/default.nix {
-    inherit pkgs hdmiOn;
-  };
-
   spotify = import ../programs/spotify/default.nix {
     inherit pkgs hdmiOn;
   };
@@ -36,7 +32,7 @@ let
   terminal = import ../programs/alacritty/default.nix { fontSize = 8; inherit pkgs; };
 
   wm = import ../programs/xmonad/default.nix {
-    inherit config pkgs lib hdmiOn megasync;
+    inherit config pkgs lib hdmiOn;
   };
 in
 {
@@ -49,5 +45,5 @@ in
 
   programs.firefox = browser.programs.firefox;
 
-  home.packages = base.home.packages ++ [ megasync spotify ];
+  home.packages = base.home.packages ++ [ spotify ];
 }
