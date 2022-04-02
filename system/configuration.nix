@@ -141,9 +141,13 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.plutusVM = {
     isNormalUser = true;
-    extraGroups  = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
+    home = "/home/plutusVM";
+    description = "plutus-VM";
+    uid = 1000;
+    extraGroups  = [ "docker" "networkmanager" "wheel" "scanner" "lp" "plugdev" ]; # wheel for ‘sudo’.
     shell        = pkgs.fish;
   };
+  users.groups.plugdev = {};
 
   #security = {
     # Yubikey login & sudo
