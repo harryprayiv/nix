@@ -48,7 +48,7 @@ fresh_install() {
     ./switch home
     ./build post-home
   '
-}
+} #this one does so much
 
 case $1 in
   "ci-home")
