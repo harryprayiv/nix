@@ -84,7 +84,7 @@ in
     };
   };
 
-  users.extraGroups.vboxusers.members = [ "harryprayiv" "plutusVM" ];
+  users.extraGroups.vboxusers.members = [ "plutusVM" ];
 
   # Enable sound.
   sound = {
@@ -198,7 +198,7 @@ in
       auto-optimise-store = true;
 
       # Required by Cachix to be used as non-root user
-      trusted-users = [ "root" "plutusVM" "harryprayiv" "gvolpe" ];
+      trusted-users = [ "root" "plutusVM" ];
     };
   };
 

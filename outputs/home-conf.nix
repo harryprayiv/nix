@@ -1,7 +1,7 @@
 { system, nixpkgs, nurpkgs, home-manager, tex2nix, ... }:
 
 let
-  username = "gvolpe";
+  username = "plutusVM";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
 
@@ -29,7 +29,7 @@ let
     home-manager.lib.homeManagerConfiguration rec {
       inherit pkgs system username homeDirectory;
 
-      stateVersion = "21.03";
+      stateVersion = "21.11";
       configuration = conf;
     });
 
