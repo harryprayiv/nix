@@ -12,7 +12,7 @@ in
     if [[ $monitors == *"HDMI"* ]]; then
       echo "Switching to HM config for HDMI display"
       cd ${home}
-      nix build --impure .#homeConfigurations.gvolpe-hdmi.activationPackage
+      nix build --impure .#homeConfigurations.plutusVM-hdmi.activationPackage
       result/activate
       cd -
     elif [[ $monitors == *"eDP"* ]]; then

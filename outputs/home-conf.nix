@@ -44,6 +44,6 @@ let
   };
 in
 {
-  harryprayiv-edp = mkHome edpConf;
-  gvolpe-hdmi = mkHome hdmiConf;
+  plutusVM-edp = mkHome edpConf;
+  plutusVM-hdmi = mkHome hdmiConf;
 }

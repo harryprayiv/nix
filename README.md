@@ -1,8 +1,8 @@
 nix-config
 ==========
 
-[![CI Home](https://github.com/harryprayiv/nix-config/workflows/Home/badge.svg)](https://github.com/harryprayiv/nix-config/actions)
-[![CI System](https://github.com/harryprayiv/nix-config/workflows/NixOS/badge.svg)](https://github.com/harryprayiv/nix-config/actions)
+[![CI Home](https://github.com/plutusVM/nix-config/workflows/Home/badge.svg)](https://github.com/plutusVM/nix-config/actions)
+[![CI System](https://github.com/plutusVM/nix-config/workflows/NixOS/badge.svg)](https://github.com/plutusVM/nix-config/actions)
 
 My current — and always evolving — NixOS configuration files, home-manager, neovim, etc.
 
@@ -111,7 +111,7 @@ Beware that the `hardware-configuration.nix` file is the result of the hardware 
 A fresh install requires the creation of certain directories so this has not been automated yet (see `build` script file). However, if you omit those steps, the entire HM configuration can also be built as any other flake.
 
 ```console
-$ nix build github:harryprayiv/nix-config#homeConfigurations.harryprayiv-hdmi.activationPackage
+$ nix build github:harryprayiv/nix-config#homeConfigurations.plutusVM-hdmi.activationPackage
 $ result/activate
 ```
 
@@ -137,6 +137,6 @@ sudo result/bin/switch-to-configuration switch
 Or for Home Manager.
 
 ```console
-$ nix build .#homeConfigurations.harryprayiv-hdmi.activationPackage
+$ nix build .#homeConfigurations.plutusVM-hdmi.activationPackage
 $ result/activate
 ```
