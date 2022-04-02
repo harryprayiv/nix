@@ -19,8 +19,6 @@ in
     [
       # Window manager
       ./wm/xmonad.nix
-      # Binary cache
-      ./cachix.nix
     ];
 
   networking = {
@@ -44,7 +42,7 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Set your time zone.
-  time.timeZone = "Europe/Warsaw";
+  time.timeZone = "America/New_York";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -86,7 +84,7 @@ in
     };
   };
 
-  users.extraGroups.vboxusers.members = [ "gvolpe" ];
+  users.extraGroups.vboxusers.members = [ "harryprayiv" "plutusVM" ];
 
   # Enable sound.
   sound = {
@@ -117,8 +115,8 @@ in
     };
 
     # Yubikey smart card mode (CCID) and OTP mode (udev)
-    pcscd.enable = true;
-    udev.packages = [ pkgs.yubikey-personalization ];
+    #pcscd.enable = true;
+    #udev.packages = [ pkgs.yubikey-personalization ];
 
     # SSH daemon.
     sshd.enable = true;
@@ -147,13 +145,13 @@ in
     shell        = pkgs.fish;
   };
 
-  security = {
+  #security = {
     # Yubikey login & sudo
-    pam.yubico = {
-      enable = true;
-      debug = false;
-      mode = "challenge-response";
-    };
+    #pam.yubico = {
+    #  enable = true;
+    #  debug = false;
+    #  mode = "challenge-response";
+    #};
 
     # Sudo custom prompt message
     sudo.configFile = ''
@@ -166,11 +164,22 @@ in
 
   # Nix daemon config
   nix = {
+    
+    binaryCaches = [
+      "https://cache.nixos.org/"
+      "https://hydra.iohk.io"
+    ];
+    binaryCachePublicKeys = [
+      "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
+      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    ];
+
     # Automate garbage collection
     gc = {
       automatic = true;
-      dates     = "weekly";
-      options   = "--delete-older-than 7d";
+      dates     = "biweekly";
+      options   = "--delete-older-than 14d";
     };
 
     # Flakes settings
@@ -189,7 +198,7 @@ in
       auto-optimise-store = true;
 
       # Required by Cachix to be used as non-root user
-      trusted-users = [ "root" "gvolpe" ];
+      trusted-users = [ "root" "plutusVM" "harryprayiv" "gvolpe" ];
     };
   };
 
@@ -199,6 +208,6 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.03"; # Did you read the comment?
+  system.stateVersion = "21.11"; # Did you read the comment?
 
 }
