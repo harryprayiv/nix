@@ -42,8 +42,7 @@ build_ci_system() {
 }
 
 fresh_install() {
-  nix-shell -p cachix --command '
-    cachix use gvolpe-nixos
+  nix-shell -p --command '
     ./switch system
     ./build pre-home
     ./switch home
