@@ -63,8 +63,6 @@ Here is an overview of the folders' structure:
 │  ├── installation.nix
 │  └── nixos-conf.nix
 └── system
-   ├── cachix
-   ├── cachix.nix
    ├── configuration.nix
    ├── fonts
    ├── machine
