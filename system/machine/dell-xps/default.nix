@@ -16,10 +16,18 @@
   virtualisation.virtualbox.guest.enable = true;
 
   networking = {
-    hostName = "dell-xps-15-9560";
-    interfaces.wlp2s0.useDHCP = true;
+    hostName = "kombucha"; # Define your hostname.
+    useDHCP = false;
+    interfaces.enp0s3.useDHCP = true;
+    wireless.enable = false;  # wireless support via wpa_supplicant.
+    #proxy.default = "http://user:password@proxy:port/";
+    #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    #networking.firewall.allowedTCPPorts = [ ... ];
+    #networking.firewall.allowedUDPPorts = [ ... ];
+    #Or disable the firewall altogether.
+    #networking.firewall.enable = false;
   };
-
+  
   services.xserver = {
     xrandrHeads = [
       { output = "HDMI-1";
