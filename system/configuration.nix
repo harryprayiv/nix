@@ -141,7 +141,7 @@ in
   programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.gvolpe = {
+  users.users.plutusVM = {
     isNormalUser = true;
     extraGroups  = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
     shell        = pkgs.fish;

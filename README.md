@@ -1,8 +1,8 @@
 nix-config
 ==========
 
-[![CI Home](https://github.com/gvolpe/nix-config/workflows/Home/badge.svg)](https://github.com/gvolpe/nix-config/actions)
-[![CI System](https://github.com/gvolpe/nix-config/workflows/NixOS/badge.svg)](https://github.com/gvolpe/nix-config/actions)
+[![CI Home](https://github.com/harryprayiv/nix-config/workflows/Home/badge.svg)](https://github.com/harryprayiv/nix-config/actions)
+[![CI System](https://github.com/harryprayiv/nix-config/workflows/NixOS/badge.svg)](https://github.com/harryprayiv/nix-config/actions)
 
 My current — and always evolving — NixOS configuration files, home-manager, neovim, etc.
 
@@ -85,14 +85,15 @@ Here is an overview of the folders' structure:
 You can have a look at the available flake outputs before getting started.
 
 ```console
-$ nix flake show github:gvolpe/nix-config
-github:gvolpe/nix-config/60b91aea6461cfb8fb1efdc9fb88f8c5ba815810
+$ nix flake show github:harryprayiv/nix-config
+github:harryprayiv/nix-config/60b91aea6461cfb8fb1efdc9fb88f8c5ba815810
 ├───devShell
 │   └───x86_64-linux: development environment 'installation-shell'
 ├───homeConfigurations: unknown
 └───nixosConfigurations
     ├───dell-xps: NixOS configuration
     └───tongfang-amd: NixOS configuration
+    └───plutusVM: NixOS configuration
 ```
 
 ### NixOS
@@ -100,7 +101,7 @@ github:gvolpe/nix-config/60b91aea6461cfb8fb1efdc9fb88f8c5ba815810
 The full home configuration is not yet fully automated but the NixOS configuration can be installed by running the following command.
 
 ```console
-$ nixos-rebuild switch --flake github:gvolpe/nix-config#tongfang-amd
+$ nixos-rebuild switch --flake github:harryprayiv/nix-config#plutusVM
 ```
 
 Beware that the `hardware-configuration.nix` file is the result of the hardware scan of the specific machine and might not be suitable for yours.
@@ -110,7 +111,7 @@ Beware that the `hardware-configuration.nix` file is the result of the hardware 
 A fresh install requires the creation of certain directories so this has not been automated yet (see `build` script file). However, if you omit those steps, the entire HM configuration can also be built as any other flake.
 
 ```console
-$ nix build github:gvolpe/nix-config#homeConfigurations.gvolpe-hdmi.activationPackage
+$ nix build github:harryprayiv/nix-config#homeConfigurations.harryprayiv-hdmi.activationPackage
 $ result/activate
 ```
 
@@ -119,7 +120,7 @@ $ result/activate
 On a fresh NixOS installation, run the following commands.
 
 ```console
-$ nix flake clone github:gvolpe/nix-config --dest /choose/a/path
+$ nix flake clone github:harryprayiv/nix-config --dest /choose/a/path
 $ nix run nixpkgs#git-crypt unlock
 $ ./build fresh-install # requires sudo
 ```
@@ -129,13 +130,13 @@ $ ./build fresh-install # requires sudo
 The `build` script is only suitable for a fresh install customized to my personal use but you can build the flakes directly. E.g.
 
 ```console
-$ nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
+$ nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
 sudo result/bin/switch-to-configuration switch
 ```
 
 Or for Home Manager.
 
 ```console
-$ nix build .#homeConfigurations.gvolpe-hdmi.activationPackage
+$ nix build .#homeConfigurations.harryprayiv-hdmi.activationPackage
 $ result/activate
 ```
