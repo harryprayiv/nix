@@ -23,7 +23,7 @@ pre_home() {
 post_home() {
   # Set user's profile picture for Gnome3
   echo "Setting profile picture for the accounts service"
-  sudo cp home/gvolpe.png /var/lib/AccountsService/icons/gvolpe
+  sudo cp home/harryprayiv.png /var/lib/AccountsService/icons/gvolpe
   sudo echo "Icon=/var/lib/AccountsService/icons/gvolpe" >> /var/lib/AccountsService/users/gvolpe
 
   # Set screenlock wallpaper
@@ -38,6 +38,7 @@ build_ci_home() {
 build_ci_system() {
   nix build .#nixosConfigurations.dell-xps.config.system.build.toplevel
   nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
+  nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
 }
 
 fresh_install() {
