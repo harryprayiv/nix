@@ -25,24 +25,6 @@
     [ { device = "/dev/disk/by-label/swap"; }
     ];
 
-fileSystems."/home/plutusVM/NAS/Programming" =
-  { device = "192.168.1.212:/volume2/Programming";
-    options = [ "x-systemd.automount" "noauto" ];
-    fsType = "nfs";
-  };
-
-fileSystems."/home/plutusVM/NAS/plutus" =
-  { device = "192.168.1.212:/volume2/homes/plutus";
-    options = [ "x-systemd.automount" "noauto" ];
-    fsType = "nfs";
-  };
-
-  fileSystems."/home/onyx/NAS/Cardano" =
-    { device = "192.168.1.212:/volume2/Cardano";
-      options = [ "x-systemd.automount" "noauto" ];
-      fsType = "nfs";
-    };
-
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
