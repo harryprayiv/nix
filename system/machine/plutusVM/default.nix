@@ -13,26 +13,17 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.kernelModules = [ "amdgpu" ];
   };
+
 
   networking = {
-    hostName = "tongfang-amd";
-    interfaces = {
-      eno1.useDHCP = true;
-      wlp1s0.useDHCP = true;
-    };
-  };
-
-  fileSystems."/data" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ext4";
+    hostName = "kombucha";
+    interfaces.enp0s3.useDHCP = true;
   };
 
   services.xserver = {
-    videoDrivers = [ "amdgpu" ];
-
-    xrandrHeads = [
+    
+   xrandrHeads = [
       { output = "HDMI-A-0";
         primary = true;
         monitorConfig = ''
