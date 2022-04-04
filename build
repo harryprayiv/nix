@@ -36,6 +36,11 @@ build_ci_home() {
 }
 
 build_ci_system() {
+  nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
+  nix build .#nixosConfigurations.onyx.config.system.build.toplevel
+  nix build .#nixosConfigurations.feather.config.system.build.toplevel
+  nix build .#nixosConfigurations.efi_Generic.config.system.build.toplevel
+  nix build .#nixosConfigurations.grub_Generic.config.system.build.toplevel
   nix build .#nixosConfigurations.dell-xps.config.system.build.toplevel
   nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
 }
@@ -62,5 +67,5 @@ case $1 in
   "post-home")
     post_home;;
   *)
-    echo "Invalid option. Expected 'ci-home', 'ci-system', 'pre_home', 'post_home' or 'fresh-install'";;
+    echo "Invalid option. Expected 'ci-home', 'ci-system', 'pre-home', 'post-home' or 'fresh-install'";;
 esac
