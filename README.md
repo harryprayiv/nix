@@ -100,7 +100,7 @@ github:harryprayiv/nix-config/60b91aea6461cfb8fb1efdc9fb88f8c5ba815810
 The full home configuration is not yet fully automated but the NixOS configuration can be installed by running the following command.
 
 ```console
-$ nixos-rebuild switch --flake github:harryprayiv/nix-config#tongfang-amd
+$ nixos-rebuild switch --flake github:harryprayiv/nix-config#plutusVM
 ```
 
 Beware that the `hardware-configuration.nix` file is the result of the hardware scan of the specific machine and might not be suitable for yours.
@@ -129,7 +129,7 @@ $ ./build fresh-install # requires sudo
 The `build` script is only suitable for a fresh install customized to my personal use but you can build the flakes directly. E.g.
 
 ```console
-$ nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
+$ nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
 sudo result/bin/switch-to-configuration switch
 ```
 
