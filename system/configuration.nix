@@ -22,6 +22,10 @@ in
       # Binary cache
       ./cachix.nix
     ];
+  
+  #______________________  
+  system.stateVersion = "21.11"; # Did you read the comment?
+  #______________________
 
   networking = {
     # Enables wireless support and openvpn via network manager.
@@ -43,8 +47,8 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Set your time zone.
-  time.timeZone = "Europe/Warsaw";
+# Set your time zone.
+  time.timeZone = "America/New_York";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -52,6 +56,7 @@ in
     firejail
     vim
     wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -141,11 +146,18 @@ in
   programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.gvolpe = {
+  users.users.plutusVM = {
     isNormalUser = true;
-    extraGroups  = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
+    description = "plutusVM";
+    extraGroups  = [ "plugdev" "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
     shell        = pkgs.fish;
+    #home = "/home/plutusVM";
+    uid = 1000;
+    # shell = pkgs.zsh;
+    # openssh.authorizedKeys.keys = [ "ssh-dss AAAAB3Nza... alice@foobar" ];
   };
+
+  users.groups.plugdev = {};  #for ledger devices
 
   security = {
     # Yubikey login & sudo
@@ -192,13 +204,4 @@ in
       trusted-users = [ "root" "plutusVM" ];
     };
   };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
-
 }
