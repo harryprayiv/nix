@@ -23,18 +23,45 @@
     extraModulePackages = [ ];
   };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/7BB3-09C5";
-      fsType = "vfat";
-    };
-
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/0fddb262-13c1-46b1-9a5d-216766f47498";
+    { device = "/dev/disk/by-uuid/83635777-72ad-40e5-b879-42db06150562";
       fsType = "ext4";
     };
 
-  swapDevices = [ ];
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/2F1A-A080";
+      fsType = "vfat";
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/8e6afd02-5fe0-4f63-9be4-c074a9f995ea"; }
+    ];
+fileSystems."/home/feather/NAS/NASvideo" =
+  { device = "192.168.1.212:/volume2/video";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+
+fileSystems."/home/feather/NAS/Programming" =
+  { device = "192.168.1.212:/volume2/Programming";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+fileSystems."/home/feather/NAS/Cardano" =
+  { device = "192.168.1.212:/volume2/Cardano";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+fileSystems."/home/feather/NAS/plutus" =
+  { device = "192.168.1.212:/volume2/homes/plutus";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
+
+fileSystems."/home/feather/NAS/NASmusic" =
+  { device = "192.168.1.212:/volume2/music";
+    options = [ "x-systemd.automount" "noauto" ];
+    fsType = "nfs";
+  };
 
 }

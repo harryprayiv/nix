@@ -1,7 +1,7 @@
 { system, nixpkgs, nurpkgs, home-manager, tex2nix, ... }:
 
 let
-  username = "gvolpe";
+  username = "plutusVM";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
 
