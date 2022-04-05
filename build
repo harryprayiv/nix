@@ -30,7 +30,7 @@ post_home() {
   echo "Setting screen-lock wallpaper"
   multilockscreen -u home/nixos.png
 }
-
+#
 build_ci_home() {
   nix build .#homeConfigurations.plutusVM-edp.activationPackage
 }
