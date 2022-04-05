@@ -33,6 +33,7 @@ post_home() {
 #
 build_ci_home() {
   nix build .#homeConfigurations.plutusVM-edp.activationPackage
+  nix build .#homeConfigurations.plutusVM-hdmi.activationPackage
 }
 
 build_ci_system() {
