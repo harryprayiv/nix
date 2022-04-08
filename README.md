@@ -91,13 +91,8 @@ github:harryprayiv/nix-config/60b91aea6461cfb8fb1efdc9fb88f8c5ba815810
 │   └───x86_64-linux: development environment 'installation-shell'
 ├───homeConfigurations: unknown
 └───nixosConfigurations
-    ├───plutusVM: NixOS configuration
-    ├───onyx: NixOS configuration
-    ├───feather: NixOS configuration
-    ├───efi_Generic: NixOS configuration
-    ├───grub_Generic: NixOS configuration
-    ├───dell-xps: NixOS configuration
-    └───tongfang-amd: NixOS configuration
+    └───plutusVM: NixOS configuration
+
 ```
 
 ### NixOS

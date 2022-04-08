@@ -14,8 +14,8 @@ rebuild_home_hdmi() {
 }
 
 rebuild_system() {
-  # nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
-  # sudo result/bin/switch-to-configuration switch
+  nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
+  sudo result/bin/switch-to-configuration switch
   sudo nixos-rebuild switch --flake .#plutusVM
 }
 
