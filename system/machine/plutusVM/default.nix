@@ -13,24 +13,24 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.kernelModules = [ "amdgpu" ];
+    #initrd.kernelModules = [ "amdgpu" ];
+    initrd.kernelModules = [  ];
   };
 
   networking = {
-    hostName = "harryprayiv";
-    interfaces = {
-      eno1.useDHCP = true;
-      wlp1s0.useDHCP = true;
-    };
+    hostName = "ada"; # Define your hostname.
+    useDHCP = false;
+    interfaces.enp0s3.useDHCP = true;
+    wireless.enable = false;  # wireless support via wpa_supplicant.
   };
 
-  fileSystems."/data" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ext4";
-  };
+#  fileSystems."/data" = {
+#    device = "/dev/nvme0n1p3";
+#    fsType = "ext4";
+#  };
 
   services.xserver = {
-    videoDrivers = [ "amdgpu" ];
+    #videoDrivers = [ "amdgpu" ];
 
     xrandrHeads = [
       { output = "HDMI-A-0";
