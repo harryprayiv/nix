@@ -59,7 +59,7 @@
     name = "vim-scala3";
     src = builtins.fetchTarball {
       name   = "vim-scala3";
-      url    = "https://github.com/gvolpe/vim-scala/archive/7379894.tar.gz";
+      url    = "https://github.com/harryprayiv/vim-scala/archive/7379894.tar.gz";
       sha256 = "1y9sjmcyv1ihkb0a3hxz85d0h2k9digczj7ppfrga2mj67lgwj4m";
     };
   };

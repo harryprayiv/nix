@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     name   = "${pname}-${localVersion}-${version}";
-    url    = "https://github.com/gvolpe/BeautyLine/archive/refs/tags/${version}.tar.gz";
+    url    = "https://github.com/harryprayiv/BeautyLine/archive/refs/tags/${version}.tar.gz";
     sha256 = "sha256-L9I2DKxbn7T/L20eDwDiaClXGZP23NFAigc6c9rC3/Q=";
   };
 
@@ -37,6 +37,6 @@ stdenv.mkDerivation rec {
     homepage    = "https://www.gnome-look.org/p/1425426/";
     platforms   = platforms.linux;
     license     = licenses.gpl3Only;
-    maintainers = with maintainers; [ gvolpe ];
+    maintainers = with maintainers; [ harryprayiv ];
   };
 }
