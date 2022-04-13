@@ -5,7 +5,7 @@ This is more or less the same configuration I currently use, except it is adapte
 
 #### Fish Shell
 
-I use a customized version of [bobthefish theme](https://github.com/oh-my-fish/theme-bobthefish). Here's a screenshot.
+gvolpe uses a customized version of [bobthefish theme](https://github.com/oh-my-fish/theme-bobthefish). Here's a screenshot.
 
 ![fish](imgs/fish.png)
 
@@ -17,7 +17,7 @@ My desktop manager of choice, including a few extensions like `dash-to-dock`, `c
 
 #### NeoVim
 
-My favorite text editor and IDE powered by LSP (language server protocol). I use too many plugins to name so here's a screenshot taken while editing this file.
+My favorite text editor and IDE powered by LSP (language server protocol). gvolpe uses too many plugins to name so here's a screenshot taken while editing this file.
 
 ![neovim](imgs/neovim.png)
 

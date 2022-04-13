@@ -473,7 +473,7 @@ projects =
             , projectStartHook = Just $ spawn "firefox -P 'default'"
             }
   , Project { projectName      = ossWs
-            , projectDirectory = "~/workspace/nix-config"
+            , projectDirectory = "~/workspace/nix"
             , projectStartHook = Just . replicateM_ 3 $ spawn myTerminal
             }
   , Project { projectName      = devWs
