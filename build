@@ -32,12 +32,13 @@ post_home() {
 }
 
 build_ci_home() {
-  nix build .#homeConfigurations.plutusVM-edp.activationPackage
+  nix build .#homeConfigurations.plutusVM-vm.activationPackage
 }
 
 build_ci_system() {
   nix build .#nixosConfigurations.plutusVM.config.system.build.toplevel
   nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
+  nix build .#nixosConfigurations.dell-xps.config.system.build.toplevel
 }
 
 fresh_install() {
