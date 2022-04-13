@@ -85,7 +85,7 @@ in
     };
   };
 
-  users.extraGroups.vboxusers.members = [ "harryprayiv" ];
+  users.extraGroups.vboxusers.members = [ "plutusVM" ];
 
   # Enable sound.
   sound = {
@@ -116,8 +116,8 @@ in
     };
 
     # Yubikey smart card mode (CCID) and OTP mode (udev)
-    pcscd.enable = true;
-    udev.packages = [ pkgs.yubikey-personalization ];
+    #pcscd.enable = true;
+    #udev.packages = [ pkgs.yubikey-personalization ];
 
     # SSH daemon.
     sshd.enable = true;
