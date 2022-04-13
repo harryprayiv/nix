@@ -11,12 +11,12 @@ rebuild_home_edp() {
 rebuild_home_hdmi() {
   nix build .#homeConfigurations.plutusVM-hdmi.activationPackage
   result/activate -b
-}
+} 
 
 rebuild_system() {
   # nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
   # sudo result/bin/switch-to-configuration switch
-  sudo nixos-rebuild switch --flake .#tongfang-amd
+  sudo nixos-rebuild switch --flake .#plutusVM
 }
 
 restart_X() {
