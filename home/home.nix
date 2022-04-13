@@ -39,7 +39,7 @@ let
     nheko                # matrix messaging client
     nix-index            # locate packages containing certain nixpkgs
     nyancat              # the famous rainbow cat!
-    md-toc               # generate ToC in markdown files
+    #md-toc               # generate ToC in markdown files
     pavucontrol          # pulseaudio volume control
     paprefs              # pulseaudio preferences
     pasystray            # pulseaudio systray
