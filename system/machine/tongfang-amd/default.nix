@@ -13,24 +13,29 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.kernelModules = [ "amdgpu" ];
+    initrd.kernelModules = [  ];
   };
 
   networking = {
-    hostName = "tongfang-amd";
-    interfaces = {
-      eno1.useDHCP = true;
-      wlp1s0.useDHCP = true;
-    };
+    hostName = "ada"; # Define your hostname.
+    useDHCP = false;
+    interfaces.enp0s3.useDHCP = true;
+    wireless.enable = false;  # wireless support via wpa_supplicant.
+    #proxy.default = "http://user:password@proxy:port/";
+    #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    #networking.firewall.allowedTCPPorts = [ ... ];
+    #networking.firewall.allowedUDPPorts = [ ... ];
+    #Or disable the firewall altogether.
+    #networking.firewall.enable = false;
   };
 
-  fileSystems."/data" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ext4";
-  };
+  #fileSystems."/data" = {
+  #  device = "/dev/nvme0n1p3";
+  #  fsType = "ext4";
+  #};
 
   services.xserver = {
-    videoDrivers = [ "amdgpu" ];
+    videoDrivers = [  ];
 
     xrandrHeads = [
       { output = "HDMI-A-0";

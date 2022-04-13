@@ -6,27 +6,34 @@
     ./hardware-configuration.nix
   ];
 
-  # Use the GRUB 2 boot loader.
+  # Use the EFI boot loader.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      grub = {
-        enable  = true;
-        device = "/dev/nvme0n1"; # or "nodev" for efi only
-        version = 2;
-      };
-    };
+
+    # Use the systemd-boot EFI boot loader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
+    initrd.kernelModules = [  ];
   };
 
   networking = {
-    hostName = "dell-xps-15-9560";
-    interfaces.wlp2s0.useDHCP = true;
+    hostName = "ada"; # Define your hostname.
+    useDHCP = false;
+    interfaces.enp0s3.useDHCP = true;
+    wireless.enable = false;  # wireless support via wpa_supplicant.
+    #proxy.default = "http://user:password@proxy:port/";
+    #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    #networking.firewall.allowedTCPPorts = [ ... ];
+    #networking.firewall.allowedUDPPorts = [ ... ];
+    #Or disable the firewall altogether.
+    #networking.firewall.enable = false;
   };
 
-  fileSystems."/data" = {
-    device = "/dev/nvme0n1p3";
-    fsType = "ext4";
-  };
+  #fileSystems."/data" = {
+  #  device = "/dev/nvme0n1p3";
+  #  fsType = "ext4";
+  #};
 
   services.xserver = {
     xrandrHeads = [
