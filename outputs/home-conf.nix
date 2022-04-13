@@ -32,7 +32,12 @@ let
       stateVersion = "21.11";
       configuration = conf;
     });
-
+  
+  vmConf = import ../home/display/vm.nix {
+    inherit nur pkgs;
+    inherit (pkgs) config lib stdenv;
+  }; 
+  
   edpConf = import ../home/display/edp.nix {
     inherit nur pkgs;
     inherit (pkgs) config lib stdenv;
@@ -42,8 +47,10 @@ let
     inherit nur pkgs;
     inherit (pkgs) config lib stdenv;
   };
+ 
 in
 {
+  plutusVM-vm = mkHome vmConf;
   plutusVM-edp = mkHome edpConf;
   plutusVM-hdmi = mkHome hdmiConf;
 }

@@ -3,6 +3,11 @@
 # Shows the output of every command
 set +x
 
+rebuild_home_vm() {
+  nix build .#homeConfigurations.plutusVM-vm.activationPackage
+  result/activate -b
+} 
+
 rebuild_home_edp() {
   nix build .#homeConfigurations.plutusVM-edp.activationPackage
   result/activate -b
@@ -25,6 +30,8 @@ restart_X() {
 }
 
 case $1 in
+  "vm")
+    rebuild_home_vm;;
   "edp")
     rebuild_home_edp;;
   "hdmi")
@@ -36,5 +43,5 @@ case $1 in
   "system")
     rebuild_system;;
   *)
-    echo "expected 'edp', 'hdmi', 'restart-x', 'update-fish' or 'system'";;
+    echo "expected 'vm', 'edp', 'hdmi', 'restart-x', 'update-fish' or 'system'";;
 esac

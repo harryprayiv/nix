@@ -36,6 +36,28 @@ eDP connected 1920x1080+0+0 (normal left inverted right x axis y axis) 344mm x 1
    1024x768      60.04
    800x600       60.04
    640x480       60.04
+
+   or 
+   Screen 0: minimum 1 x 1, current 800 x 600, maximum 8192 x 8192
+Virtual1 connected primary 800x600+0+0 (normal left inverted right x axis y axis) 0mm x 0mm
+   800x600       60.00*+  60.32  
+   2560x1600     59.99  
+   1920x1440     60.00  
+   1856x1392     60.00  
+   1792x1344     60.00  
+   1920x1200     59.88  
+   1600x1200     60.00  
+   1680x1050     59.95  
+   1400x1050     59.98  
+   1280x1024     60.02  
+   1440x900      59.89  
+   1280x960      60.00  
+   1360x768      60.02  
+   1280x800      59.81  
+   1152x864      75.00  
+   1280x768      59.87  
+   1024x768      60.00  
+   640x480       59.94 
 ```
 
 To manually set the mode and refresh rate, we run.

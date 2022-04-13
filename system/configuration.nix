@@ -44,7 +44,7 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Set your time zone.
-  time.timeZone = "Europe/Warsaw";
+  time.timeZone = "America/New_York";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -52,6 +52,7 @@ in
     firejail
     vim
     wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -70,23 +71,7 @@ in
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-  # Enable Docker & VirtualBox support.
-  virtualisation = {
-    docker = {
-      enable = true;
-      autoPrune = {
-        enable = true;
-        dates = "weekly";
-      };
-    };
 
-    virtualbox.host = {
-      enable = false;
-      enableExtensionPack = false;
-    };
-  };
-
-  users.extraGroups.vboxusers.members = [ "plutusVM" ];
 
   # Enable sound.
   sound = {

@@ -10,7 +10,7 @@ let
   '';
 
   hdmiExtra = lib.optionalString hdmiOn ''
-    ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-0 --mode 3840x2160 --rate 30.00
+    ${pkgs.xorg.xrandr}/bin/xrandr --output Virtual1 --mode 800x600 --rate 60.00
   '';
 
   polybarOpts = ''

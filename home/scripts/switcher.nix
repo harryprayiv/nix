@@ -9,7 +9,13 @@ in
   pkgs.writeShellScriptBin "hms" ''
     monitors=$(${xrandr} --query | ${rg} '\bconnected')
 
-    if [[ $monitors == *"HDMI"* ]]; then
+    if [[ $monitors == *"Virtual1"* ]]; then
+      echo "Switching to HM config for VM display"
+      cd ${home}
+      nix build --impure .#homeConfigurations.plutusVM-vm.activationPackage
+      result/activate
+      cd -
+    elif [[ $monitors == *"HDMI"* ]]; then
       echo "Switching to HM config for HDMI display"
       cd ${home}
       nix build --impure .#homeConfigurations.plutusVM-hdmi.activationPackage

@@ -12,9 +12,9 @@ let
 
   hdmiBar = pkgs.callPackage ../services/polybar/bar.nix { };
 
-  megasync = import ../programs/megasync/default.nix {
-    inherit pkgs hdmiOn;
-  };
+  #megasync = import ../programs/megasync/default.nix {
+  #  inherit pkgs hdmiOn;
+  #};
 
   spotify = import ../programs/spotify/default.nix {
     inherit pkgs hdmiOn;
@@ -26,7 +26,7 @@ let
     openCalendar = "${pkgs.gnome3.gnome-calendar}/bin/gnome-calendar";
   };
 
-  terminal = import ../programs/alacritty/default.nix { fontSize = 10; inherit pkgs; };
+  terminal = import ../programs/alacritty/default.nix { fontSize = 9; inherit pkgs; };
 
   wm = import ../programs/xmonad/default.nix {
     inherit config pkgs lib hdmiOn megasync;
