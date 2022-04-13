@@ -91,7 +91,7 @@ github:gvolpe/nix-config/60b91aea6461cfb8fb1efdc9fb88f8c5ba815810
 │   └───x86_64-linux: development environment 'installation-shell'
 ├───homeConfigurations: unknown
 └───nixosConfigurations
-    ├───dell-xps: NixOS configuration
+    ├───plutusVM: NixOS configuration
     └───tongfang-amd: NixOS configuration
 ```
 

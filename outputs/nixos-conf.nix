@@ -1,11 +1,11 @@
 { lib, inputs, system, ... }:
 
 {
-  dell-xps = lib.nixosSystem {
+  plutusVM = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit inputs; };
     modules = [
-      ../system/machine/dell-xps
+      ../system/machine/plutusVM
       ../system/configuration.nix
     ];
   };
