@@ -9,7 +9,7 @@ in
   pkgs.writeShellScriptBin "hms" ''
     monitors=$(${xrandr} --query | ${rg} '\bconnected')
 
-    if [[ $monitors == *"Virtual1"* ]]; then
+    if [[ $monitors == *"vm"* ]]; then
       echo "Switching to HM config for VM display"
       cd ${home}
       nix build --impure .#homeConfigurations.plutusVM-vm.activationPackage
