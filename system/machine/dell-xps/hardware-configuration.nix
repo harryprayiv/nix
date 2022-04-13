@@ -34,8 +34,8 @@ fileSystems."/home/plutusVM/NAS/plutus" =
     fsType = "nfs";
   };
 
-  nix.maxJobs = lib.mkDefault 4;
-  powerManagement.cpuFreqGovernor = "powersave";
+  #nix.maxJobs = lib.mkDefault 4;
+  #powerManagement.cpuFreqGovernor = "powersave";
   #hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   virtualisation.virtualbox.guest.enable = true;
   
