@@ -71,8 +71,6 @@ in
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-
-
   # Enable sound.
   sound = {
     enable = true;
