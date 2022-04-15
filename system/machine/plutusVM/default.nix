@@ -43,9 +43,9 @@
     virtualbox = {
       host = {
         enable = false;
-        enableExtensionPack = true;
+        enableExtensionPack = false;
       };
-      guest.enable = true;
+      guest.enable = false;
     };
   };
 
