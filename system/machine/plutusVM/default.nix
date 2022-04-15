@@ -40,13 +40,17 @@
       };
     };
 
-    virtualbox.host = {
-      enable = false;
-      enableExtensionPack = false;
+    virtualbox = {
+      host = {
+        enable = false;
+        enableExtensionPack = true;
+      };
+      guest.enable = true;
     };
   };
 
   users.extraGroups.vboxusers.members = [ "plutusVM" ];
+ 
   #fileSystems."/data" = {
   #  device = "/dev/nvme0n1p3";
   #  fsType = "ext4";
