@@ -146,7 +146,7 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
-  #nixpkgs.config.allowBroken = true; #seems dubious...may be my nix-channel at fault
+  nixpkgs.config.allowBroken = true; #seems dubious...may be my nix-channel at fault
 
   # Nix daemon config
   nix = {
