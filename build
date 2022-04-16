@@ -40,14 +40,20 @@ build_ci_system() {
   #nix build .#nixosConfigurations.tongfang-amd.config.system.build.toplevel
   #nix build .#nixosConfigurations.dell-xps.config.system.build.toplevel
 }
-
 fresh_install() {
   nix-shell --command '
     ./switch system
     ./build pre-home
-    ./switch home
+    ./switch vm
     ./build post-home
   '
+}
+funky_fresh_install() {
+    sudo nix flake update
+    ./switch system
+    ./build pre-home
+    ./switch vm
+    ./build post-home
 }
 
 case $1 in
@@ -61,6 +67,8 @@ case $1 in
     pre_home;;
   "post-home")
     post_home;;
+  "funky-fresh-install")
+    funky_fresh_install;;
   *)
-    echo "Invalid option. Expected 'ci-home', 'ci-system', 'pre_home', 'post_home' or 'fresh-install'";;
+    echo "Invalid option. Expected 'ci-home', 'ci-system', 'pre_home', 'post_home', 'fresh-install' or 'funky-fresh-install'";;
 esac
