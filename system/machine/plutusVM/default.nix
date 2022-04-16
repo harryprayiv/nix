@@ -39,13 +39,11 @@
         dates = "weekly";
       };
     };
-
     virtualbox = {
       host = {
         enable = false;
-        enableExtensionPack = false;
+        enableExtensionPack = true;
       };
-      guest.enable = false;
     };
   };
 
