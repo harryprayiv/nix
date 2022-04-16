@@ -12,7 +12,7 @@ let
     bitwarden-cli        # command-line client for the password manager
     bottom               # alternative to htop & ytop
     cachix               # nix caching
-    calibre              # e-book reader
+    #calibre              # e-book reader
     #cobang               # qr-code scanner
     dconf2nix            # dconf (gnome) files to nix converter
     dmenu                # application launcher
