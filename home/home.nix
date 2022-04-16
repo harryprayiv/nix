@@ -12,8 +12,8 @@ let
     bitwarden-cli        # command-line client for the password manager
     bottom               # alternative to htop & ytop
     cachix               # nix caching
-    #calibre              # e-book reader
-    #cobang               # qr-code scanner
+    calibre              # e-book reader
+    cobang               # qr-code scanner
     dconf2nix            # dconf (gnome) files to nix converter
     dmenu                # application launcher
     docker-compose       # docker manager
@@ -39,7 +39,7 @@ let
     nheko                # matrix messaging client
     nix-index            # locate packages containing certain nixpkgs
     nyancat              # the famous rainbow cat!
-    #md-toc               # generate ToC in markdown files
+    md-toc               # generate ToC in markdown files
     pavucontrol          # pulseaudio volume control
     paprefs              # pulseaudio preferences
     pasystray            # pulseaudio systray
@@ -67,6 +67,47 @@ let
 
     # fixes the `ar` error required by cabal
     binutils-unwrapped
+    #__________new_____________
+      ## Text Editors ##
+  alacritty vscode atom
+
+  ## Web Browsers ##
+  brave
+  ## Chat Apps ##
+  discord #telegram-desktop signal-desktop
+
+  ## Github ##
+  mr gitAndTools.gitFull jq
+
+  ## Basic Hacker Stuff ##
+  gparted nfs-utils sshfs mtr sysstat
+  wget coreutils binutils curl
+  zip unzip killall syncthing-cli
+  htop
+  #vimHugeX 
+  sudo iptables nmap tcpdump rxvt_unicode #xscreensaver
+
+  ## Coding ##
+  gcc zlib bc manpages
+  zulu #OpenJDK 11
+
+  ## Piracy ##
+  openvpn 
+  transmission 
+  vlc 
+  ffmpeg 
+  mkvtoolnix
+
+  ## Nix Package for nix-shell etc ##
+  binutils 
+  cabal2nix
+  
+  ## X11 Packages ##
+  trayer
+
+  ## Haskell packages and Xmonad Stuff ##
+  cabal-install 
+  ghc
   ];
 
   gitPkgs = with pkgs.gitAndTools; [
