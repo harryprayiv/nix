@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 {
-  #imports = [
-  #  (modulesPath + "/installer/scan/not-detected.nix")
-  #];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
   boot = {
     initrd = {
@@ -33,8 +33,4 @@ fileSystems."/home/plutusVM/NAS/plutus" =
     options = [ "x-systemd.automount" "noauto" ];
     fsType = "nfs";
   };
-
-  #nix.maxJobs = lib.mkDefault 4;
-  #powerManagement.cpuFreqGovernor = "powersave";
-  #hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
