@@ -88,7 +88,7 @@ let
   sudo iptables nmap tcpdump rxvt_unicode #xscreensaver
 
   ## Coding ##
-  gcc zlib bc manpages
+  gcc zlib bc man-pages
   zulu #OpenJDK 11
 
   ## Piracy ##
