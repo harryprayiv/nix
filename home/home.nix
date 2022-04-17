@@ -81,7 +81,7 @@ let
 
     ## Basic Hacker Stuff ##
     gparted nfs-utils sshfs mtr sysstat
-    wget coreutils binutils curl
+    wget coreutils curl
     zip unzip killall syncthing-cli
     htop
     #vimHugeX 
@@ -98,8 +98,7 @@ let
     ffmpeg 
     mkvtoolnix
 
-    ## Nix Package for nix-shell etc ##
-    binutils 
+    ## Nix Package for nix-shell etc ## 
     cabal2nix
   
     ## X11 Packages ##
