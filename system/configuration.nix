@@ -93,7 +93,10 @@ in
     # Mount MTP devices
     gvfs.enable = true;
     dbus.packages = [ pkgs.dconf ]; #attempt at getting DBUS to work
-    udev.packages = [ pkgs.gnome3.gnome-settings-daemon ]; #Dbus attemtp
+    udev.packages = [ 
+      pkgs.gnome3.gnome-settings-daemon 
+      pkgs.yubikey-personalization 
+      ]; #Dbus attemtp
 
     # Enable the OpenSSH daemon.
     openssh = {
@@ -103,7 +106,6 @@ in
 
     # Yubikey smart card mode (CCID) and OTP mode (udev)
     pcscd.enable = true;
-    udev.packages = [ pkgs.yubikey-personalization ];
 
     # SSH daemon.
     sshd.enable = true;
