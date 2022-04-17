@@ -92,6 +92,8 @@ in
   services = {
     # Mount MTP devices
     gvfs.enable = true;
+    dbus.packages = [ pkgs.dconf ]; #attempt at getting DBUS to work
+    udev.packages = [ pkgs.gnome3.gnome-settings-daemon ]; #Dbus attemtp
 
     # Enable the OpenSSH daemon.
     openssh = {
