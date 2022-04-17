@@ -50,16 +50,16 @@
   };
 
   hardware.bluetooth = {
-    enable = true;
-    hsphfpd.enable = true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-      };
+    enable = false;
+    hsphfpd.enable = false;
+    #settings = {
+    #  General = {
+    #    Enable = "Source,Sink,Media,Socket";
+     # };
    };
   };
 
-  services.blueman.enable = true;
+  services.blueman.enable = false;
 
-  systemd.services.upower.enable = true;
+  systemd.services.upower.enable = false;
 }
