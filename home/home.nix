@@ -21,6 +21,7 @@ let
     drawio               # diagram design
     duf                  # disk usage/free utility
     exa                  # a better `ls`
+    ffmpeg 
     fd                   # "find" for files
     gimp                 # gnu image manipulation program
     glow                 # terminal markdown viewer
@@ -50,11 +51,11 @@ let
     ranger               # terminal file explorer
     ripgrep              # fast grep
     rnix-lsp             # nix lsp server
-    signal-desktop       # signal messaging client
-    simple-scan          # scanner gui
+    #signal-desktop       # signal messaging client
+    #simple-scan          # scanner gui
     simplescreenrecorder # screen recorder gui
     slack                # messaging client
-    tdesktop             # telegram messaging client
+    #tdesktop             # telegram messaging client
     tex2nix              # texlive expressions for documents
     tldr                 # summary of a man page
     tree                 # display files in a tree view
@@ -68,30 +69,44 @@ let
     # fixes the `ar` error required by cabal
     binutils-unwrapped
     alacritty 
-    vscode 
     brave
     discord #telegram-desktop signal-desktop
 
     ## Github ##
-    mr gitAndTools.gitFull jq
+    mr 
+    gitAndTools.gitFull 
+    jq
 
     ## Basic Hacker Stuff ##
-    gparted nfs-utils sshfs mtr sysstat
-    wget coreutils curl
-    zip unzip killall syncthing-cli
+    gparted 
+    nfs-utils 
+    sshfs 
+    mtr 
+    sysstat
+    wget 
+    coreutils 
+    curl
+    zip 
+    unzip 
+    syncthing-cli
     htop
     #vimHugeX 
-    sudo iptables nmap tcpdump rxvt_unicode #xscreensaver
+    sudo 
+    iptables 
+    nmap 
+    tcpdump 
+    rxvt_unicode 
+    #xscreensaver
 
     ## Coding ##
-    zlib bc man-pages
+    zlib 
+    bc 
+    man-pages
     zulu #OpenJDK 11
 
     ## Piracy ##
     openvpn 
-    transmission 
-    vlc 
-    ffmpeg 
+    transmission  
     mkvtoolnix
   ];
 
