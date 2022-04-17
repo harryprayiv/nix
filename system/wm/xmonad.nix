@@ -61,5 +61,5 @@
 
   services.blueman.enable = false;
 
-  systemd.services.upower.enable = false;
+  systemd.services.upower.enable = true;
 }
