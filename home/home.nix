@@ -72,11 +72,6 @@ let
     brave
     discord #telegram-desktop signal-desktop
 
-    ## Github ##
-    mr 
-    gitAndTools.gitFull 
-    jq
-
     ## Basic Hacker Stuff ##
     gparted 
     nfs-utils 
@@ -88,15 +83,9 @@ let
     curl
     zip 
     unzip 
-    syncthing-cli
-    htop
-    #vimHugeX 
+
     sudo 
-    iptables 
-    nmap 
-    tcpdump 
-    rxvt_unicode 
-    #xscreensaver
+  
 
     ## Coding ##
     zlib 
@@ -115,6 +104,7 @@ let
     git-crypt     # git files encryption
     hub           # github command-line client
     tig           # diff and commit view
+    mr            # my favorite batch repo tool 
   ];
 
   gnomePkgs = with pkgs.gnome3; [
