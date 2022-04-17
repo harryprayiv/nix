@@ -97,16 +97,6 @@ let
     vlc 
     ffmpeg 
     mkvtoolnix
-
-    ## Nix Package for nix-shell etc ## 
-    cabal2nix
-  
-    ## X11 Packages ##
-    trayer
-
-    ## Haskell packages and Xmonad Stuff ##
-    cabal-install 
-    ghc
   ];
 
   gitPkgs = with pkgs.gitAndTools; [
