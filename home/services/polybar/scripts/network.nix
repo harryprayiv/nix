@@ -12,16 +12,23 @@ let
   # Dell XPS
   eth2  = "enp62s0u1u3";
   wifi2 = "wlp2s0";
+
+    # plutusVM
+  eth3  = "enp0s3";
+  wifi3 = "wlp1s0";
+
 in
   pkgs.writeShellScriptBin "check-network" ''
     if [[ $1 = "eth" ]]; then
       eth1=$(${ethtool} ${eth1} 2>/dev/null | ${rg} "Link detected: yes" | ${wc} -l)
       eth2=$(${ethtool} ${eth2} 2>/dev/null | ${rg} "Link detected: yes" | ${wc} -l)
-
+      eth3=$(${ethtool} ${eth3} 2>/dev/null | ${rg} "Link detected: yes" | ${wc} -l)
       if [[ $eth1 -eq 1 ]]; then
         echo ${eth1}
       elif [[ $eth2 -eq 1 ]]; then
         echo ${eth2}
+      elif [[ $eth3 -eq 1 ]]; then
+        echo ${eth3}
       else
         echo ""
       fi
