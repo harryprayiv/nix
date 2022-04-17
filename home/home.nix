@@ -67,13 +67,9 @@ let
 
     # fixes the `ar` error required by cabal
     binutils-unwrapped
-    #__________new_____________
-      ## Text Editors ##
-    alacritty vscode atom
-
-    ## Web Browsers ##
+    alacritty 
+    vscode 
     brave
-    ## Chat Apps ##
     discord #telegram-desktop signal-desktop
 
     ## Github ##
@@ -212,7 +208,16 @@ in
     };
 
     ssh.enable = true;
-
+    
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        #Theme
+        mskelton.one-dark-theme
+        haskell.haskell
+      ];
+    };
+    
     zoxide = {
       enable = true;
       enableFishIntegration = true;
