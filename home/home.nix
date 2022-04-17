@@ -31,7 +31,7 @@ let
     jitsi-meet-electron  # open source video calls and chat
     jmtpfs               # mount mtp devices
     killall              # kill processes by name
-    libreoffice          # office suite
+    #libreoffice          # office suite
     libnotify            # notify-send command
     multilockscreen      # fast lockscreen based on i3lock
     ncdu                 # disk space info (a better du)
