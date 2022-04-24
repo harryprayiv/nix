@@ -1,4 +1,4 @@
-# Configuration for the HDMI-1 display monitor
+# Configuration for the Virtual1 display monitor
 { config, lib, pkgs, stdenv, nur, ... }:
 
 let
